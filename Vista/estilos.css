@@ -1,0 +1,467 @@
+html,body{
+    margin:0px;
+    height:100%;
+    width: 100%;
+    padding:0px;
+}
+
+#contenedor {
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/1686134.jpg);
+
+}
+#contenedor #tablacontenedor #form1 #tablalogin .Estilo1 {
+    font-size: 18px;
+}
+
+#tablalogin{
+    border-spacing:0;
+    background:#CCCCCC;
+    border-collapse:collapse;
+}
+
+#contenedorpaneladmin {
+    width:100%;
+    background: #0099FF;
+    height:100%;
+    background-image:url(../Imagen/vineyard-backgrounds-1920x1200.jpg);
+}
+
+#contenedorregistrarusuario {
+    width:100%;
+    background: #0099FF;
+    height:100%;
+    background-image:url(../Imagen/Kahlenberg-hills-Austria-nature-vineyards-dusk_2560x1600.jpg);
+}
+#contenedormodificarusuariosimple {
+    width:100%;
+    background: #0099FF;
+    height:100%;
+    background-image:url(../Imagen/Kahlenberg-hills-Austria-nature-vineyards-dusk_2560x1600.jpg);
+}
+
+#contenedormodificarusuario {
+    width:100%;
+    background: #0099FF;
+    height:100%;
+    background-image:url(../Imagen/Kahlenberg-hills-Austria-nature-vineyards-dusk_2560x1600.jpg);
+}
+
+#contenedorlistarusuario {
+    width:100%;
+    background: #0099FF;
+    height:100%;
+    background-image:url(../Imagen/Kahlenberg-hills-Austria-nature-vineyards-dusk_2560x1600.jpg);
+}
+
+#header{
+    margin:auto;
+    width:1094px;
+    height:80px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding-left: 80px;
+}
+
+ul, ol{
+    list-style:none;
+}
+
+.menu > li {
+    float:left;
+}
+
+.menu li a{
+    background:#f3f3f3;
+    color:#000000;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+    border-radius:20px;
+}
+
+.menu li a:hover{
+    background-color:#999999;
+}
+
+.menu li ul{
+    display:none;
+    position:absolute;
+    width:140px;
+}
+
+.menu > li{
+    float:left;
+}
+
+.menu li:hover > ul{
+    display:block;
+}
+
+#divlateral{
+    clear:both;
+    margin-top:10px;
+    width:20%;
+    height:50%;
+}
+
+#divcontenido{
+    position:absolute;
+    width:50%;
+    height:50%;
+    float:left;
+    left: 154px;
+    top: 114px;
+
+}
+
+#contenedorpaneladministrativo{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);
+
+}
+
+#contenedorsocio{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#tablaSocio{
+    background:#CCCCCC;
+}
+#contenedormodificarsocio{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#contenedorlistarsocio{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#contenedoringresarpuestotrabajo{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#contenedoringresartrabajador{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+#contenedormodificartrabajador{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+#contenedorlistartrabajador{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#contenedorsubir{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Administrativo.jpg);	
+}
+
+#contenedordescarga{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Kahlenberg-hills-Austria-nature-vineyards-dusk_2560x1600.jpg);	
+}
+
+#contenedorpanelcalidad{
+    display:flex;
+    min-height:100vh;
+    background-image:url(../Imagen/calidad.jpg);
+}
+
+#contenedormodificarplancalidad{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/calidad.jpg);
+}
+
+#contenedorlistarcalidad{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/calidad.jpg);
+}
+
+#contenedorpanelcomercial{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}		
+
+
+#contenedoringresarcliente{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedormodificarcliente{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedorlistarcliente{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedorlistarvinos{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedoringresarventas{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedorvisualizarventas{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedormodificarplanmarketing{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+#contenedorlistarmarketing{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+#contenedorcrearplanmarketing{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/Comercial.jpg);
+}	
+
+
+
+#contenedorpanelcompras{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedoringresartipoproducto{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedoringresarproveedor{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedormodificarproveedor{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedorlistarproveedor{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedoringresarcompra{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+#contenedormodificarstock{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedorlistarproductos{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/compra.jpg);
+}	
+
+#contenedorpanelinventario{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/inventario.jpg);
+}	
+
+#contenedoringresarvino{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/inventario.jpg);
+}	
+
+#contenedormodificarstockvino{
+    width:100%;
+    margin:0;
+    position: absolute;
+    height:100%;
+    left: 1px;
+    top: 1px;
+    background-image:url(../Imagen/inventario.jpg);
+}	
+
+#tablaingresarvinos{
+    background:#CCCCCC;
+}
+
+#tablamodificarstockvinos{
+    background:#CCCCCC;
+}

@@ -1,0 +1,25 @@
+/* CSS Document */
+
+body {
+background-image:url(../Imagen/Administrativo.jpg);
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.panel{
+margin:auto;
+width:40%;
+border:1px solid rgba(0,0,0,0.2);
+border-radius:40px;   
+}
+
+.table th{
+    background-color:#204d74;
+    color:#ffffff;
+}
+
+.table td{
+    background-color:#CCCCCC;
+}

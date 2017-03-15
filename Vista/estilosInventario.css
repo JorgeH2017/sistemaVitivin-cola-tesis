@@ -1,0 +1,28 @@
+/* CSS Document */
+body {
+background-image:url(../Imagen/f8113693-cb86-e58b-127f-1c926a1abfac);
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.panel{
+margin:auto;
+width:40%;
+border:1px solid rgba(0,0,0,0.2);
+border-radius:30px;   
+}
+
+.table th{
+    background-color:#204d74;
+    color:#ffffff;
+}
+
+.table td{
+    background-color:#CCCCCC;
+}
+
+
+
+

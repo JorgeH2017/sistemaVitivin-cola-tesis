@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Formulario Login</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
+        <link rel="stylesheet" href="estilos2.css">
+        <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"/>
+        <script src="../Vista/Javascript/validarLogin.js"></script>
+        <style type="text/css">
+            <!--
+            .Estilo1 {
+                font-size: 36px;
+                font-weight: bold;
+                font-style: italic;
+            }
+            -->
+        </style>
+    </head>
+    <body>
+
+        <form id="form" name="form" method="POST" action="../Controlador/dologin.php" onsubmit="return validarLogin()">
+            <h1 class="Estilo1">Sistema Vitivinícola</h1>
+            <h2>Iniciar Sesión</h2>
+            <br>
+            <input type="text" name="txtusuario" id="txtusuario" placeholder="&#128272; Usuario" autocomplete="off">
+            <br>
+            <input type="password" name="txtpass" id="txtpass" placeholder="&#128272; Contraseña" autocomplete="off">
+            <br>
+            <input type="submit" name="btnlogin" id="btnlogin" value="Ingresar">
+            <a href="../Vista/recuperarcontrasena.php">Haz olvidado la contraseña?</a>
+
+        </form>
+    </body>
+</html>
