@@ -2,31 +2,27 @@
 
 class Conexion {
 
-    private $usuario = "root";
-    private $clave = "";
-    private $host = "127.0.0.1";
-    private $bd = "sistema_vitivinicola";
-    private $conex = "";
+    private $tipoBd = 'mysql';
+    private $host = 'localhost';
+    private $nombreBd = 'sistema_vitivinicola';
+    private $usuario = 'root';
+    private $clave = '';
 
     public function __construct() {
-        
-    }
 
-//sin ´parametros
-    public function abrirConexion() {
-        $this->conex = mysqli_connect($this->host, $this->usuario, $this->clave, $this->bd) or die("Problema de conexión");
-    }
+        try {
+//Conexión a la base de datos
 
-    public function ejecutarConsulta($sql) {
-        $this->abrirConexion();
-        $resul = mysqli_query($this->conex, $sql) or die("ERROR : $sql<br>".$sql.mysqli_error($this->conex));
-        return $resul;
-    }
-
-    public function cerrarConexion() {
-        mysqli_close($this->conex);
+            $conecta = new PDO($this->tipoBd . ':host=' . $this->host . ';dbname=' . $this->nombreBd, $this->usuario, $this->clave);
+            $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conecta->exec("SET CHARACTER SET utf8");
+        } catch (Exception $e) {
+            echo 'Ha surgido un error y no se puede conectar a la base de datos. Detalle: ' . $e->getMessage();
+        } finally {
+            $conecta = null;
+        }
     }
 
 }
 ?>
-
+      

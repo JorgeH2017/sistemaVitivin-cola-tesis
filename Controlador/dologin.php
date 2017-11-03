@@ -24,7 +24,7 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 
         if ($existe > 0) {
             $contrasenaBD = $fila["contrasena_usuario"];
-            if (password_verify($password, $contrasenaBD)) {
+            if (password_verify($password, $contrasenaBD)|| $password==$contrasenaBD) {
 
                 if ($fila['id_tipoUsuario'] == 1) {
 
