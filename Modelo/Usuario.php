@@ -18,13 +18,12 @@ class Usuario {
     private $paisusuario;
     private $fechaingreso;
     private $tipousuario;
-    private $estadousuario;
 
     public function __construct() {
         
     }
 
-    public function Usuario($nombreusuario = "", $contrasenausuario = "", $nombre = "", $apellido = "", $telefonousuario = "", $correousuario = "", $direccionusuario = "", $ciudadusuario = "", $regionusuario = "", $codpostal = "", $paisusuario = "", $fechaingreso = "", $tipousuario = "", $estadousuario = "", $idusuario = null) {
+    public function Usuario($nombreusuario = "", $contrasenausuario = "", $nombre = "", $apellido = "", $telefonousuario = "", $correousuario = "", $direccionusuario = "", $ciudadusuario = "", $regionusuario = "", $codpostal = "", $paisusuario = "", $fechaingreso = "", $tipousuario = "", $idusuario = null) {
         $this->idusuario = $idusuario;
         $this->nombreusuario = $nombreusuario;
         $this->contrasenausuario = $contrasenausuario;
@@ -39,7 +38,6 @@ class Usuario {
         $this->paisusuario = $paisusuario;
         $this->fechaingreso = $fechaingreso;
         $this->tipousuario = $tipousuario;
-        $this->estadousuario = $estadousuario;
     }
 
     /* public function Usuario2($nombreusuario = "", $nombre = "", $apellido = "", $telefonousuario = "", $direccionusuario = "", $idusuario = null) {
@@ -108,10 +106,6 @@ class Usuario {
         return $this->tipousuario;
     }
 
-    function getEstadoUsuario() {
-        return $this->estadousuario;
-    }
-
     function setNombreUsuario($nombreusuario) {
         $this->nombreusuario = $nombreusuario;
     }
@@ -160,18 +154,29 @@ class Usuario {
         $this->tipousuario = $tipousuario;
     }
 
-    function setEstadoUsuario($estadousuario) {
-        $this->estadousuario = $estadousuario;
-    }
-
 //Metodos de negocio
+//Este método verifica que exista un usuario con ese nombre de usuario y contraseña.
+//Consulta todos los datos de ese usuario.
     public function existeUsuario($usuario, $contrasena) {
         $objConex = new Conexion();
-        $consulta = $objConex->prepare('select id_usuario, nombre_usuario, contrasena_usuario,id_tipoUsuario from usuario where nombre_usuario = :usuario and contrasena_usuario=:contrasena');
+        $consulta = $objConex->prepare('select * from usuario where nombre_usuario = :usuario and contrasena_usuario=:contrasena');
         $consulta->bindValue(':usuario', $usuario, PDO::PARAM_STR);
         $consulta->bindValue(':contrasena', $contrasena, PDO::PARAM_STR);
         $consulta->execute();
         return $consulta;
+        $consulta = null;
+        $objConex = null;
+    }
+
+    public function cantidadUsuario($user, $pass) {
+        $objConex = new Conexion();
+        $consulta = $objConex->prepare('select count(*) from usuario where nombre_usuario = :usuario and contrasena_usuario=:contrasena');
+        $consulta->bindValue(':usuario', $user, PDO::PARAM_STR);
+        $consulta->bindValue(':contrasena', $pass, PDO::PARAM_STR);
+        $consulta->execute();
+        return $consulta;
+        $consulta = null;
+        $objConex = null;
     }
 
     /*

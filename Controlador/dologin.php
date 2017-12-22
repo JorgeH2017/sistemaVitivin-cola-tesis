@@ -6,7 +6,6 @@ require_once ("../Modelo/Usuario.php");
 
 if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 
-//Obtener datos de html y filtrar los inputs
     $username = filter_input(INPUT_POST, 'txtusuario');
     $password = filter_input(INPUT_POST, 'txtpass');
 
@@ -15,10 +14,12 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 //Buscar datos en BD
         $objUsuario = new Usuario();
         $validarusuario = $objUsuario->existeUsuario($username, $password);
-
+        $valida2 = $objUsuario->cantidadUsuario($username, $password);
 //manipular datos
-        $fila = $validarusuario->fetch();
-        $existe = $validarusuario->rowCount();
+        $fila = $validarusuario->fetchAll();
+        $existe = $valida2->rowCount();
+
+
 
         if ($existe > 0) {
             $contrasenaBD = $fila["contrasena_usuario"];
@@ -72,4 +73,4 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
     }
 }
 
-    
+

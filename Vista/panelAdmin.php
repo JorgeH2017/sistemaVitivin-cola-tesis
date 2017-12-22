@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["usuario"])) {
-    header("location:../Vista/index.html");
+    header("location:../index.php");
 } elseif ($_SESSION["TipUsuario"] == 2) {
     header("Location:../Vista/paneladministrativo.php");
 } elseif ($_SESSION["TipUsuario"] == 3) {
@@ -14,39 +14,39 @@ if (!isset($_SESSION["usuario"])) {
 } elseif ($_SESSION["TipUsuario"] == 6) {
     header("Location:../Vista/panelinventario.php");
 }
-    ?>
+?>
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
-            <title>Documento sin t&iacute;tulo</title>
-            <link href="estilos.css" rel="stylesheet" type="text/css" />
-            <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"/>
-            <style type="text/css">
-                <!--
-                .Estilo3 {
-                    font-size: 60px;
-                    font-weight: bold;
-                }
-                #contenedorpaneladmin {
-                    font-family: Arial, Helvetica, sans-serif;
-                }
-                .Estilo4 {color: #999999}
-                .Estilo5 {font-size: 14px}
-                .Estilo6 {
-                    font-size: 14px;
-                    font-weight: bold;
-                }
-                -->
-            </style>
-        </head>
-        <body>
-            <div id="contenedorpaneladmin">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
+        <title>Documento sin t&iacute;tulo</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css" />
+        <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"/>
+        <style type="text/css">
+            <!--
+            .Estilo3 {
+                font-size: 60px;
+                font-weight: bold;
+            }
+            #contenedorpaneladmin {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .Estilo4 {color: #999999}
+            .Estilo5 {font-size: 14px}
+            .Estilo6 {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            -->
+        </style>
+    </head>
+    <body>
+        <div id="contenedorpaneladmin">
 
-                <div align="right">
-                    Nombre de usuario: <?= $_SESSION["usuario"]; ?>
+            <div align="right">
+                Nombre de usuario: <?= $_SESSION["usuario"]; ?>
                 <p align="right">
                     <a href="modificarusuariosimple.php"><input name="btnmodificarperfil" id="btnmodificarperfil" type="button" value="Modificar Perfil Usuario"></a><br>
                     <a href="../Controlador/dologout.php"><input name="btncerrar" id="btncerrar" type="button" value="Cerrar Sesión"></a>  </p> </div>  
