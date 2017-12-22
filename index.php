@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <link rel="stylesheet" href="Vista/estilos2.css">
         <link href="Vista/Bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <script src="Vista/Javascript/validarLogin.js"></script>
         <style type="text/css">
             <!--
             .Estilo1 {
@@ -16,13 +15,19 @@
             }
             a{
                 display:flex;
+                -moz-display:flex;
+                -ms-display:flex;
+                -webkit-display:flex;
                 justify-content:center;
+                -moz-justify-content:center;
+                -webkit-justify-content:center;
+                -ms-justify-content:center;
             }
             -->
         </style>
     </head>
     <body>
-        <form id="form" name="form" method="POST" action="../Controlador/dologin.php" onsubmit="return validarLogin()">
+        <form id="form" name="form" method="POST" action="Controlador/dologin.php" onsubmit="return validarLogin()">
             <h1 class="Estilo1">Sistema Vitivinícola</h1>
             <h2>Iniciar Sesión</h2>
             <br>

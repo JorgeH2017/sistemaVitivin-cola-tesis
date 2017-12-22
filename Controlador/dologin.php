@@ -2,11 +2,11 @@
 
 session_start();
 
-require_once ("../Clases/Usuario.php");
+require_once ("../Modelo/Usuario.php");
 
 if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 
-//Obtener datos de html
+//Obtener datos de html y filtrar los inputs
     $username = filter_input(INPUT_POST, 'txtusuario');
     $password = filter_input(INPUT_POST, 'txtpass');
 
@@ -14,18 +14,16 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 
 //Buscar datos en BD
         $objUsuario = new Usuario();
-        $validarusuario = $objUsuario->seleccionarUsuario($username);
+        $validarusuario = $objUsuario->existeUsuario($username, $password);
 
 //manipular datos
-        $fila = mysqli_fetch_array($validarusuario);
-
-        $existe = mysqli_num_rows($validarusuario);
-
+        $fila = $validarusuario->fetch();
+        $existe = $validarusuario->rowCount();
 
         if ($existe > 0) {
             $contrasenaBD = $fila["contrasena_usuario"];
-            if (password_verify($password, $contrasenaBD)|| $password==$contrasenaBD) {
-
+            if ($contrasenaBD == $password) {
+                //if (password_verify($password, $contrasenaBD) || $password == $contrasenaBD) {
                 if ($fila['id_tipoUsuario'] == 1) {
 
                     $_SESSION["id"] = $fila["id_usuario"];
@@ -64,12 +62,14 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
                     Header("Location:../Vista/panelinventario.php");
                 }
             } else {
-                echo "<script language='javascript'>alert('Contraseña incorrecta');window.location='../Vista/index.html'</script>";
+                "<script>alert('Contraseña incorrecta');window.location='../index.php'</script>";
             }
         } else {
-            echo "<script language='javascript'>alert('El usuario no existe');window.location='../Vista/index.html'</script>";
+            "<script>alert('El usuario no existe');window.location='../index.php'</script>";
         }
     } else {
-        echo "<script language='javascript'>alert('Complete todos los campos');window.location='../Vista/index.html'</script>";
+        echo "<script>alert('Complete todos los campos');window.location='../index.php'</script>";
     }
 }
+
+    
