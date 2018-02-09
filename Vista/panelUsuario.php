@@ -3,8 +3,8 @@ session_start();
 
 if (!isset($_SESSION["usuario"])) {
     header("location:../index.php");
-} elseif ($_SESSION["TipUsuario"] == 2) {
-    header("Location:../Vista/panelUsuario.php");
+} elseif ($_SESSION["TipUsuario"] == 1) {
+    header("Location:../Vista/panelAdmin.php");
 }
 ?>
 

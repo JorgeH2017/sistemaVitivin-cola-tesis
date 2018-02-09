@@ -13,54 +13,29 @@ if (isset($_POST["btnlogin"]) && $_POST["btnlogin"] == "Ingresar") {
 
 //Buscar datos en BD
         $objUsuario = new Usuario();
-        $validarusuario = $objUsuario->existeUsuario($username, $password);
-        $valida2 = $objUsuario->cantidadUsuario($username, $password);
+        $validarusuario = $objUsuario->existeUsuario($username);
+
+
 //manipular datos
-        $fila = $validarusuario->fetchAll();
-        $existe = $valida2->rowCount();
+        $fila = $validarusuario->fetch();
 
-
-
-        if ($existe > 0) {
+        $user = $fila["nombre_usuario"];
+        if ($user === $username) {
             $contrasenaBD = $fila["contrasena_usuario"];
-            if ($contrasenaBD == $password) {
-                //if (password_verify($password, $contrasenaBD) || $password == $contrasenaBD) {
-                if ($fila['id_tipoUsuario'] == 1) {
+            if ($contrasenaBD === $password) {
+//if (password_verify($password, $contrasenaBD) || $password == $contrasenaBD) {
+                if ($fila["id_tipoUsuario"] == 1) {
 
                     $_SESSION["id"] = $fila["id_usuario"];
                     $_SESSION["usuario"] = $fila["nombre_usuario"];
                     $_SESSION["TipUsuario"] = 1;
                     Header("Location:../Vista/panelAdmin.php");
-                } else if ($fila['id_tipoUsuario'] == 2) {
+                } else if ($fila["id_tipoUsuario"] == 2) {
 
                     $_SESSION["id"] = $fila["id_usuario"];
                     $_SESSION["usuario"] = $fila["nombre_usuario"];
                     $_SESSION["TipUsuario"] = 2;
-                    Header("Location:../Vista/paneladministrativo.php");
-                } else if ($fila['id_tipoUsuario'] == 3) {
-
-                    $_SESSION["id"] = $fila["id_usuario"];
-                    $_SESSION["usuario"] = $fila["nombre_usuario"];
-                    $_SESSION["TipUsuario"] = 3;
-                    Header("Location:../Vista/panelcalidad.php");
-                } else if ($fila['id_tipoUsuario'] == 4) {
-
-                    $_SESSION["id"] = $fila["id_usuario"];
-                    $_SESSION["usuario"] = $fila["nombre_usuario"];
-                    $_SESSION["TipUsuario"] = 4;
-                    Header("Location:../Vista/panelcomercial.php");
-                } else if ($fila['id_tipoUsuario'] == 5) {
-
-                    $_SESSION["id"] = $fila["id_usuario"];
-                    $_SESSION["usuario"] = $fila["nombre_usuario"];
-                    $_SESSION["TipUsuario"] = 5;
-                    Header("Location:../Vista/panelcompras.php");
-                } else if ($fila['id_tipoUsuario'] == 6) {
-
-                    $_SESSION["id"] = $fila["id_usuario"];
-                    $_SESSION["usuario"] = $fila["nombre_usuario"];
-                    $_SESSION["TipUsuario"] = 6;
-                    Header("Location:../Vista/panelinventario.php");
+                    Header("Location:../Vista/panelUsuario.php");
                 }
             } else {
                 "<script>alert('Contraseña incorrecta');window.location='../index.php'</script>";

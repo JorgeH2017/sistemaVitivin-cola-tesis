@@ -157,29 +157,25 @@ class Usuario {
 //Metodos de negocio
 //Este método verifica que exista un usuario con ese nombre de usuario y contraseña.
 //Consulta todos los datos de ese usuario.
-    public function existeUsuario($usuario, $contrasena) {
+    public function existeUsuario($usuario) {
         $objConex = new Conexion();
-        $consulta = $objConex->prepare('select * from usuario where nombre_usuario = :usuario and contrasena_usuario=:contrasena');
-        $consulta->bindValue(':usuario', $usuario, PDO::PARAM_STR);
-        $consulta->bindValue(':contrasena', $contrasena, PDO::PARAM_STR);
+        $consulta = $objConex->prepare('select * from usuario where nombre_usuario = :usuario');
+        $consulta->bindParam(':usuario', $usuario, PDO::PARAM_STR);
         $consulta->execute();
-        return $consulta;
-        $consulta = null;
         $objConex = null;
+        return $consulta;
     }
 
-    public function cantidadUsuario($user, $pass) {
-        $objConex = new Conexion();
-        $consulta = $objConex->prepare('select count(*) from usuario where nombre_usuario = :usuario and contrasena_usuario=:contrasena');
-        $consulta->bindValue(':usuario', $user, PDO::PARAM_STR);
-        $consulta->bindValue(':contrasena', $pass, PDO::PARAM_STR);
-        $consulta->execute();
-        return $consulta;
-        $consulta = null;
-        $objConex = null;
-    }
+    /* public function cantidadUsuario($user) {
+      $objConex = new Conexion();
+      $consulta = $objConex->query("select count(nombre_usuario) from usuario where nombre_usuario=$user");
+      $res = $consulta->fetchColumn(1);
+      return $res;
+      $consulta = null;
+      $objConex = null;
+      }
 
-    /*
+
       public function insertarUsuario() {
       $objConex = new Conexion();
       $objConex->abrirConexion();
